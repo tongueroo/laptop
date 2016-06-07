@@ -122,45 +122,7 @@ It should take less than 15 minutes to install (depends on your machine).
 Customize in `~/.laptop.local`
 ------------------------------
 
-Your `~/.laptop.local` is run at the end of the Laptop script.
-Put your customizations there.
-For example:
-
-```sh
-#!/bin/sh
-
-brew bundle --file=- <<EOF
-brew "Caskroom/cask/dockertoolbox"
-brew "go"
-brew "ngrok"
-brew "watch"
-EOF
-
-default_docker_machine() {
-  docker-machine ls | grep -Fq "default"
-}
-
-if ! default_docker_machine; then
-  docker-machine create --driver virtualbox default
-fi
-
-default_docker_machine_running() {
-  default_docker_machine | grep -Fq "Running"
-}
-
-if ! default_docker_machine_running; then
-  docker-machine start default
-fi
-
-fancy_echo "Cleaning up old Homebrew formulae ..."
-brew cleanup
-brew cask cleanup
-
-if [ -r "$HOME/.rcrc" ]; then
-  fancy_echo "Updating dotfiles ..."
-  rcup
-fi
-```
+I've customized the ~/.laptop.local and put this in the homesick managed dotfiles repo.
 
 Write your customizations such that they can be run safely more than once.
 See the `mac` script for examples.
