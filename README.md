@@ -25,6 +25,14 @@ Install
 Download, review, then execute the script:
 
 ```sh
+git clone git@github.com:tongueroo/laptop.git
+cd laptop
+sh mac 2>&1 | tee ~/laptop.log
+```
+
+OR
+
+```sh
 curl --remote-name https://raw.githubusercontent.com/tongueroo/laptop/master/mac
 less mac
 sh mac 2>&1 | tee ~/laptop.log
