@@ -1,7 +1,7 @@
 Laptop
 ======
 
-Laptop is a script to set up an OS X laptop for web development.
+Laptop is a script to set up an OS X laptop for web development by thoughbot.  I've modified this for my own personal use.
 
 It can be run multiple times on the same machine safely.
 It installs, upgrades, or skips packages
@@ -25,7 +25,7 @@ Install
 Download, review, then execute the script:
 
 ```sh
-curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
+curl --remote-name https://raw.githubusercontent.com/tongueroo/laptop/master/mac
 less mac
 sh mac 2>&1 | tee ~/laptop.log
 ```
